@@ -24,7 +24,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <ThemeProvider theme={light}>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }

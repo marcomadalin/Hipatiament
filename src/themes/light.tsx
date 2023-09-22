@@ -1,12 +1,18 @@
 import { createTheme } from "@mui/material";
 
 const light = createTheme({
+  typography: {
+    fontFamily: ["Cardo"].join(","),
+  },
   palette: {
     primary: {
-      main: "#1d9bf0",
+      main: "#FDE5E5",
     },
     secondary: {
-      main: "#e7e7e8",
+      main: "#434040",
+    },
+    error: {
+      main: "#224c9d",
     },
   },
 });
