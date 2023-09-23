@@ -14,37 +14,39 @@ function MainLayout() {
   ];
 
   return (
-    <div>
-      <AppBar component="nav">
-        <Toolbar className="flex justify-between">
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={(): void => {}}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h5">HIPÀTIAMENT</Typography>
+    <>
+      <div style={{ height: "64px" }}>
+        <AppBar component="nav">
+          <Toolbar className="flex justify-between">
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={(): void => {}}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h5">HIPÀTIAMENT</Typography>
 
-          <div className="flex">
-            {links.map((item, key) => (
-              <Button
-                key={key}
-                variant="text"
-                color="secondary"
-                size="large"
-                disableRipple
-              >
-                {item.text}
-              </Button>
-            ))}
-          </div>
-        </Toolbar>
-      </AppBar>
+            <div className="flex">
+              {links.map((item, key) => (
+                <Button
+                  key={key}
+                  variant="text"
+                  color="secondary"
+                  size="large"
+                  disableRipple
+                >
+                  {item.text}
+                </Button>
+              ))}
+            </div>
+          </Toolbar>
+        </AppBar>
+      </div>
       <Outlet />
-    </div>
+    </>
   );
 }
 

@@ -8,7 +8,7 @@ import {
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import { ThemeProvider } from "@mui/material";
-import light from "./themes/light";
+import light from "./themes/light.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

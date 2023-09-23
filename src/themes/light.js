@@ -11,8 +11,13 @@ const light = createTheme({
     secondary: {
       main: "#434040",
     },
-    error: {
-      main: "#224c9d",
+    text: {
+      heading1: "#FFFDFD",
+      heading2: "#F3DDDD",
+    },
+    background: {
+      dark: "#434040",
+      light: "#eeeeee",
     },
   },
 });
