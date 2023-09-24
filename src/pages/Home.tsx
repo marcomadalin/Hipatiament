@@ -6,9 +6,9 @@ function Home() {
 
   return (
     <>
-      <section className={`${classes.section1} pt-10`}>
-        <div className="content-center">
-          <div>
+      <section className={`${classes.section1}`}>
+        <div className={classes.headingsBox}>
+          <div className="mb-16">
             <Typography variant="h3" className={classes.heading1}>
               Divulgació científica en català per
             </Typography>
@@ -23,19 +23,16 @@ function Home() {
             Phasellus vulputate dignissim nulla nec imperdiet.
           </Typography>
         </div>
-        <div>
+        <div className={classes.mainImageBox}>
           <Box
             component="img"
-            sx={{
-              width: "500px",
-              height: "719px",
-            }}
-            alt="The house from the offer."
+            className={classes.mainImage}
+            alt="Coneixemnt"
             src="https://i.pinimg.com/564x/64/57/2c/64572cfbe1a767bd7bad406f7fc1e0ae.jpg"
           />
         </div>
       </section>
-      <section className={classes.section2}>This is my app 2</section>
+      <section className={classes.section2}></section>
     </>
   );
 }

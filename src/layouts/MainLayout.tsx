@@ -5,9 +5,13 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { mainLayoutStyles } from "../styles/MainLayoutStyles";
 
 function MainLayout() {
+  const classes = mainLayoutStyles();
+
   const links: { text: string }[] = [
+    { text: "Inici" },
     { text: "Articles" },
     { text: "Videos" },
     { text: "Contacte" },
@@ -16,8 +20,8 @@ function MainLayout() {
   return (
     <>
       <div style={{ height: "64px" }}>
-        <AppBar component="nav">
-          <Toolbar className="flex justify-between">
+        <AppBar className="px-10" component="nav">
+          <Toolbar className={classes.navbar}>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -29,12 +33,13 @@ function MainLayout() {
             </IconButton>
             <Typography variant="h5">HIPÀTIAMENT</Typography>
 
-            <div className="flex">
+            <div className={classes.linkBox}>
               {links.map((item, key) => (
                 <Button
                   key={key}
                   variant="text"
                   color="secondary"
+                  className={classes.link}
                   size="large"
                   disableRipple
                 >
