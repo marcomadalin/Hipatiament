@@ -13,7 +13,8 @@ const light = createTheme({
       main: "#434040",
     },
     text: {
-      defaultLight: "#FFFDFD",
+      dark: "#515151",
+      light: "#FFFDFD",
       heading: "#F3DDDD",
     },
     background: {
