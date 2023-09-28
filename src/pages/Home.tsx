@@ -6,9 +6,11 @@ import instagramIcon from "../assets/images/instagram.svg";
 import tiktokIcon from "../assets/images/tiktok.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import "swiper/css/navigation";
+import { Navigation, Pagination } from "swiper/modules";
+import photo1 from "../assets/images/article1.jpg";
+import photo2 from "../assets/images/article2.jpg";
 
 function Home() {
   const classes = homeStyles();
@@ -68,47 +70,61 @@ function Home() {
       </section>
       <section className={classes.section2}>
         <Swiper
-          effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={"auto"}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
+          slidesPerView={1}
+          spaceBetween={10}
+          pagination={{
+            clickable: true,
           }}
-          pagination={true}
-          modules={[EffectCoverflow, Pagination]}
-          className="mySwiper"
+          breakpoints={{
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 50,
+            },
+          }}
+          autoplay={true}
+          grabCursor={true}
+          navigation={true}
+          modules={[Pagination, Navigation]}
         >
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <SwiperSlide className={classes.slide}>
+            <article className={classes.articleBox}>
+              <Box
+                component="img"
+                sx={{
+                  height: "70%",
+                  width: "100%",
+                }}
+                alt="GRUPS SANGUINIS"
+                src={photo1}
+              />
+              <Typography
+                align="center"
+                variant="h5"
+                className={classes.articleHeading}
+              >
+                ELS GRUPS SANGUINIS
+              </Typography>
+            </article>
           </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+          <SwiperSlide className={classes.slide}>
+            <article className={classes.articleBox}>
+              <Box
+                component="img"
+                sx={{
+                  height: "70%",
+                  width: "100%",
+                }}
+                alt="ALZHEIMER"
+                src={photo2}
+              />
+              <Typography
+                align="center"
+                variant="h5"
+                className={classes.articleHeading}
+              >
+                L’ALZHEIMER, UNA MALALTIA GENÈTICA?
+              </Typography>
+            </article>
           </SwiperSlide>
         </Swiper>
       </section>

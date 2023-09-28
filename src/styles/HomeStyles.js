@@ -10,8 +10,12 @@ export const homeStyles = makeStyles((theme) =>
       justifyContent: "space-between",
     },
     section2: {
+      boxSizing: "border-box",
+      display: "flex",
+      alignSelf: "center",
       minHeight: "calc(100vh - 64px)",
       backgroundColor: theme.palette.background.light,
+      padding: "0px 60px 0px 60px",
     },
     headingsBox: {
       height: "100",
@@ -35,7 +39,7 @@ export const homeStyles = makeStyles((theme) =>
       marginBottom: "32px !important",
     },
     mainImageBox: {
-      height: "100%",
+      height: "100",
       display: "flex",
       alignItems: "center",
     },
@@ -64,6 +68,30 @@ export const homeStyles = makeStyles((theme) =>
       textAlign: "center !important",
       width: "50px !important",
       height: "50px !important",
+    },
+    slide: {
+      minHeight: "100%",
+    },
+    articleBox: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      height: "100%",
+      "&:hover": {
+        cursor: "pointer",
+      },
+    },
+    articleHeading: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: theme.palette.primary.main,
+      "&:hover": {
+        backgroundColor: `${theme.palette.primary.dark} !important`,
+        cursor: "pointer",
+      },
+      color: theme.palette.text.dark,
+      height: "80px",
     },
   })
 );
