@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { homeStyles } from "../styles/HomeStyles.js";
 import Button from "@mui/material/Button";
 import facebookIcon from "../assets/images/facebook.svg";
@@ -14,10 +14,17 @@ import photo2 from "../assets/images/article2.jpg";
 
 function Home() {
   const classes = homeStyles();
+  const theme = useTheme();
+
+  const large = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
     <>
-      <section className={`${classes.section1}`}>
+      <section
+        className={`${classes.section1} ${
+          large ? "justify-between" : "justify-normal"
+        }`}
+      >
         <div className={classes.headingsBox}>
           <div className="mb-16">
             <Typography variant="h1" className={classes.heading1}>
@@ -59,14 +66,16 @@ function Home() {
             </a>
           </div>
         </div>
-        <div className={classes.mainImageBox}>
-          <Box
-            component="img"
-            className={classes.mainImage}
-            alt="Coneixemnt"
-            src="https://i.pinimg.com/564x/64/57/2c/64572cfbe1a767bd7bad406f7fc1e0ae.jpg"
-          />
-        </div>
+        {large && (
+          <div className={classes.mainImageBox}>
+            <Box
+              component="img"
+              className={classes.mainImage}
+              alt="Coneixemnt"
+              src="https://i.pinimg.com/564x/64/57/2c/64572cfbe1a767bd7bad406f7fc1e0ae.jpg"
+            />
+          </div>
+        )}
       </section>
       <section className={classes.section2}>
         <Swiper

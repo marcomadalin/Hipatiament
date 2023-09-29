@@ -7,7 +7,6 @@ export const homeStyles = makeStyles((theme) =>
       display: "flex",
       backgroundColor: theme.palette.background.dark,
       padding: "40px 60px 40px 60px",
-      justifyContent: "space-between",
     },
     section2: {
       boxSizing: "border-box",
@@ -46,6 +45,10 @@ export const homeStyles = makeStyles((theme) =>
     mainImage: {
       width: "500px",
       height: "750px",
+    },
+    mainImageSmall: {
+      width: "200px",
+      height: "450px",
     },
     subscribe: {
       backgroundColor: `${theme.palette.primary.main} !important`,
