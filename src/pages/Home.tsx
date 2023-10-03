@@ -11,12 +11,44 @@ import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
 import photo1 from "../assets/images/article1.jpg";
 import photo2 from "../assets/images/article2.jpg";
+import photo3 from "../assets/images/article3.jpg";
+import photo4 from "../assets/images/article4.jpg";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const classes = homeStyles();
   const theme = useTheme();
 
+  const navigate = useNavigate();
+
   const large = useMediaQuery(theme.breakpoints.up("lg"));
+
+  const articles = [
+    {
+      name: "ELS GRUPS SANGUINIS",
+      photo: photo1,
+      alt: "GRUPS SANGUINIS",
+      link: "/GrupsSanguinis",
+    },
+    {
+      name: " L’ALZHEIMER, UNA MALALTIA GENÈTICA?",
+      photo: photo2,
+      alt: "ALZHEIMER",
+      link: "",
+    },
+    {
+      name: "PHINEAS GAGE, L’HOME QUE VA SOBREVIURE A UNA PERFORACIÓ CRANEAL",
+      photo: photo3,
+      alt: "PHINEAS GAGE",
+      link: "",
+    },
+    {
+      name: "LES PASTILLES ANTICONCEPTIVES",
+      photo: photo4,
+      alt: "PASTILLES ANTICONCEPTIVES",
+      link: "",
+    },
+  ];
 
   return (
     <>
@@ -85,8 +117,12 @@ function Home() {
             clickable: true,
           }}
           breakpoints={{
-            1024: {
+            800: {
               slidesPerView: 2,
+              spaceBetween: 50,
+            },
+            1200: {
+              slidesPerView: 3,
               spaceBetween: 50,
             },
           }}
@@ -95,46 +131,33 @@ function Home() {
           navigation={true}
           modules={[Pagination, Navigation]}
         >
-          <SwiperSlide className={classes.slide}>
-            <article className={classes.articleBox}>
-              <Box
-                component="img"
-                sx={{
-                  height: "70%",
-                  width: "100%",
-                }}
-                alt="GRUPS SANGUINIS"
-                src={photo1}
-              />
-              <Typography
-                align="center"
-                variant="h5"
-                className={classes.articleHeading}
-              >
-                ELS GRUPS SANGUINIS
-              </Typography>
-            </article>
-          </SwiperSlide>
-          <SwiperSlide className={classes.slide}>
-            <article className={classes.articleBox}>
-              <Box
-                component="img"
-                sx={{
-                  height: "70%",
-                  width: "100%",
-                }}
-                alt="ALZHEIMER"
-                src={photo2}
-              />
-              <Typography
-                align="center"
-                variant="h5"
-                className={classes.articleHeading}
-              >
-                L’ALZHEIMER, UNA MALALTIA GENÈTICA?
-              </Typography>
-            </article>
-          </SwiperSlide>
+          {articles.map((item, key) => {
+            return (
+              <SwiperSlide key={key} className={classes.slide}>
+                <article className={classes.articleBox}>
+                  <Box
+                    component="img"
+                    className={classes.articleImage}
+                    alt={item.alt}
+                    src={item.photo}
+                    onClick={() => {
+                      navigate(item.link);
+                    }}
+                  />
+                  <Typography
+                    align="center"
+                    variant="h5"
+                    className={classes.articleHeading}
+                    onClick={() => {
+                      navigate(item.link);
+                    }}
+                  >
+                    {item.name}
+                  </Typography>
+                </article>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </section>
     </>

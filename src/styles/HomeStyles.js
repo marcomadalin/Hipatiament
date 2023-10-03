@@ -53,11 +53,11 @@ export const homeStyles = makeStyles((theme) =>
     subscribe: {
       backgroundColor: `${theme.palette.primary.main} !important`,
       color: `${theme.palette.text.dark} !important`,
-
       fontSize: "18px !important",
       padding: "10px 10px 10px 10xp !important",
       width: "200px !important",
       height: "50px !important",
+      borderRadius: "0px !important",
       "&:hover": {
         backgroundColor: `${theme.palette.primary.dark} !important`,
       },
@@ -80,6 +80,11 @@ export const homeStyles = makeStyles((theme) =>
       flexDirection: "column",
       justifyContent: "center",
       height: "100%",
+    },
+    articleImage: {
+      height: "70%",
+      width: "100%",
+      objectFit: "cover",
       "&:hover": {
         cursor: "pointer",
       },
