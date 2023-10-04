@@ -19,7 +19,7 @@ const light = createTheme({
     },
     background: {
       dark: "#434040",
-      light: "#FFFDFD",
+      light: "#f5f5f5",
     },
   },
 });

@@ -34,19 +34,19 @@ function Home() {
       name: " L’ALZHEIMER, UNA MALALTIA GENÈTICA?",
       photo: photo2,
       alt: "ALZHEIMER",
-      link: "",
+      link: "/Alzeimer",
     },
     {
       name: "PHINEAS GAGE, L’HOME QUE VA SOBREVIURE A UNA PERFORACIÓ CRANEAL",
       photo: photo3,
       alt: "PHINEAS GAGE",
-      link: "",
+      link: "/PhineasGage",
     },
     {
       name: "LES PASTILLES ANTICONCEPTIVES",
       photo: photo4,
       alt: "PASTILLES ANTICONCEPTIVES",
-      link: "",
+      link: "/Anticonceptius",
     },
   ];
 

@@ -9,6 +9,9 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import { ThemeProvider } from "@mui/material";
 import light from "./themes/light.js";
+import Anticonceptius from "./pages/Anticonceptius";
+import PhineasGage from "./pages/PhineasGage";
+import Alzeimer from "./pages/Alzeimer";
 import GrupSanguinis from "./pages/GrupSanguinis";
 
 const router = createBrowserRouter(
@@ -16,7 +19,10 @@ const router = createBrowserRouter(
     <Route>
       <Route element={<MainLayout />}>
         <Route element={<Home />} />
-        <Route element={<GrupSanguinis />} path="/GrupsSanguinis" />
+        <Route element={<GrupSanguinis />} path="/GrupSanguinis" />
+        <Route element={<Alzeimer />} path="/Alzeimer" />
+        <Route element={<PhineasGage />} path="/PhineasGage" />
+        <Route element={<Anticonceptius />} path="/Anticonceptius" />
         <Route path="*" element={<Home />} />
       </Route>
     </Route>
