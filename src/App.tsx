@@ -12,17 +12,19 @@ import light from "./themes/light.js";
 import Anticonceptius from "./pages/Anticonceptius";
 import PhineasGage from "./pages/PhineasGage";
 import Alzeimer from "./pages/Alzeimer";
-import GrupSanguinis from "./pages/GrupSanguinis";
+import GrupsSanguinis from "./pages/GrupsSanguinis";
+import CamaEnganxada from "./pages/CamaEnganxada";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route element={<MainLayout />}>
         <Route element={<Home />} />
-        <Route element={<GrupSanguinis />} path="/GrupSanguinis" />
+        <Route element={<GrupsSanguinis />} path="/GrupsSanguinis" />
         <Route element={<Alzeimer />} path="/Alzeimer" />
         <Route element={<PhineasGage />} path="/PhineasGage" />
         <Route element={<Anticonceptius />} path="/Anticonceptius" />
+        <Route element={<CamaEnganxada />} path="/CamaEnganxada" />
         <Route path="*" element={<Home />} />
       </Route>
     </Route>

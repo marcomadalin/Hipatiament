@@ -13,6 +13,7 @@ import photo1 from "../assets/images/article1.jpg";
 import photo2 from "../assets/images/article2.jpg";
 import photo3 from "../assets/images/article3.jpg";
 import photo4 from "../assets/images/article4.jpg";
+import photo5 from "../assets/images/article5.jpg";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
@@ -47,6 +48,12 @@ function Home() {
       photo: photo4,
       alt: "PASTILLES ANTICONCEPTIVES",
       link: "/Anticonceptius",
+    },
+    {
+      name: "TENIR UNA CAMA ENGANXADA AL COS",
+      photo: photo5,
+      alt: "CAMA ENGANXADA",
+      link: "/CamaEnganxada",
     },
   ];
 
