@@ -8,6 +8,7 @@ const light = createTheme({
     primary: {
       main: "#FDE5E5",
       dark: "#AD9B9B",
+      highlight: "#F0B1C8",
     },
     secondary: {
       main: "#434040",

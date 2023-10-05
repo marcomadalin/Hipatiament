@@ -1,4 +1,15 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Fab,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import MessageIcon from "@mui/icons-material/Message";
 import { homeStyles } from "../styles/HomeStyles.js";
 import Button from "@mui/material/Button";
 import facebookIcon from "../assets/images/facebook.svg";
@@ -15,12 +26,15 @@ import photo3 from "../assets/images/article3.jpg";
 import photo4 from "../assets/images/article4.jpg";
 import photo5 from "../assets/images/article5.jpg";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function Home() {
   const classes = homeStyles();
   const theme = useTheme();
 
   const navigate = useNavigate();
+
+  const [open, setOpen] = useState(false);
 
   const large = useMediaQuery(theme.breakpoints.up("lg"));
 
@@ -56,6 +70,14 @@ function Home() {
       link: "/CamaEnganxada",
     },
   ];
+
+  const openContactDialog = () => {
+    setOpen(true);
+  };
+
+  const closeContactDialog = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -167,6 +189,33 @@ function Home() {
           })}
         </Swiper>
       </section>
+      <div className={classes.floatingButtonBox}>
+        <Fab
+          className={classes.contactButton}
+          size="large"
+          color="primary"
+          aria-label="contact"
+          onClick={openContactDialog}
+        >
+          <MessageIcon />
+        </Fab>
+      </div>
+      <Dialog
+        className={classes.contactDialog}
+        open={open}
+        onClose={closeContactDialog}
+      >
+        <DialogTitle>Contacte</DialogTitle>
+        <DialogContent></DialogContent>
+        <DialogActions>
+          <Button onClick={closeContactDialog} className={classes.dialogButton}>
+            Cancel·la
+          </Button>
+          <Button onClick={closeContactDialog} className={classes.dialogButton}>
+            Envia
+          </Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 }

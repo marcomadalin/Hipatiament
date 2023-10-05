@@ -51,7 +51,7 @@ export const homeStyles = makeStyles((theme) =>
       height: "450px",
     },
     subscribe: {
-      backgroundColor: `${theme.palette.primary.main} !important`,
+      backgroundColor: `${theme.palette.primary.highlight} !important`,
       color: `${theme.palette.text.dark} !important`,
       fontSize: "18px !important",
       padding: "10px 10px 10px 10xp !important",
@@ -100,6 +100,27 @@ export const homeStyles = makeStyles((theme) =>
       },
       color: theme.palette.text.dark,
       height: "80px",
+    },
+    floatingButtonBox: {
+      position: "fixed",
+      bottom: "20px",
+      right: "20px",
+      zIndex: "99999 !important",
+    },
+    contactButton: {
+      color: `${theme.palette.text.dark} !important`,
+      backgroundColor: `${theme.palette.primary.highlight} !important`,
+    },
+    contactDialog: {
+      "& .MuiPaper-root": {
+        backgroundColor: theme.palette.primary.main,
+      },
+      color: theme.palette.text.dark,
+    },
+    dialogButton: {
+      color: `${theme.palette.text.dark} !important`,
+      backgroundColor: `${theme.palette.primary.highlight} !important`,
+      borderRadius: "0px !important",
     },
   })
 );
