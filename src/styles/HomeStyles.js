@@ -101,11 +101,14 @@ export const homeStyles = makeStyles((theme) =>
       color: theme.palette.text.dark,
       height: "80px",
     },
+    swiper: {
+      zIndex: "9 !important",
+    },
     floatingButtonBox: {
       position: "fixed",
       bottom: "20px",
       right: "20px",
-      zIndex: "99999 !important",
+      zIndex: "10 !important",
     },
     contactButton: {
       color: `${theme.palette.text.dark} !important`,
@@ -114,13 +117,37 @@ export const homeStyles = makeStyles((theme) =>
     contactDialog: {
       "& .MuiPaper-root": {
         backgroundColor: theme.palette.primary.main,
+        maxWidth: "700px !important",
+        width: "100% !important",
+        padding: "20px 40px 40px 40px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       },
       color: theme.palette.text.dark,
     },
+    dialogContent: {
+      marginTop: "20px",
+      maxWidth: "400px !important",
+      width: "100% !important",
+    },
+    inputsStack: {
+      width: "100% !important",
+    },
     dialogButton: {
+      width: "100px !important",
       color: `${theme.palette.text.dark} !important`,
       backgroundColor: `${theme.palette.primary.highlight} !important`,
       borderRadius: "0px !important",
+    },
+    input: {
+      width: "100% !important",
+      marginBottom: "40px !important",
+      backgroundColor: `${theme.palette.background.light} !important`,
+      color: `${theme.palette.text.dark} !important`,
+      "& .MuiInput-underline:after": {
+        borderBottomColor: theme.palette.primary.highlight,
+      },
     },
   })
 );

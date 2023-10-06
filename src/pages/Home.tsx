@@ -5,11 +5,15 @@ import {
   DialogContent,
   DialogTitle,
   Fab,
+  IconButton,
+  Stack,
+  TextField,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import MessageIcon from "@mui/icons-material/Message";
+import CloseIcon from "@mui/icons-material/Close";
 import { homeStyles } from "../styles/HomeStyles.js";
 import Button from "@mui/material/Button";
 import facebookIcon from "../assets/images/facebook.svg";
@@ -35,6 +39,9 @@ function Home() {
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
 
   const large = useMediaQuery(theme.breakpoints.up("lg"));
 
@@ -76,7 +83,14 @@ function Home() {
   };
 
   const closeContactDialog = () => {
+    setName("");
+    setEmail("");
+    setText("");
     setOpen(false);
+  };
+
+  const sendMail = async () => {
+    closeContactDialog();
   };
 
   return (
@@ -159,6 +173,7 @@ function Home() {
           grabCursor={true}
           navigation={true}
           modules={[Pagination, Navigation]}
+          className={classes.swiper}
         >
           {articles.map((item, key) => {
             return (
@@ -205,13 +220,55 @@ function Home() {
         open={open}
         onClose={closeContactDialog}
       >
-        <DialogTitle>Contacte</DialogTitle>
-        <DialogContent></DialogContent>
+        <div className="w-full">
+          <IconButton onClick={closeContactDialog}>
+            <CloseIcon />
+          </IconButton>
+        </div>
+        <DialogTitle sx={{ fontSize: "30px", paddingTop: "0px" }}>
+          Contacte
+        </DialogTitle>
+        <DialogContent
+          className={classes.dialogContent}
+          sx={{ width: "100% !important" }}
+        >
+          <Stack className={classes.inputsStack}>
+            <TextField
+              placeholder="Nom"
+              variant="standard"
+              value={name}
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
+              className={classes.input}
+              inputProps={{ style: { padding: "15px" } }}
+            />
+            <TextField
+              required
+              placeholder="Correu"
+              variant="standard"
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+              className={classes.input}
+              inputProps={{ style: { padding: "15px" } }}
+            />
+            <TextField
+              placeholder="Escriu aqui...."
+              variant="standard"
+              multiline
+              minRows="7"
+              value={text}
+              onChange={(event) => {
+                setText(event.target.value);
+              }}
+              className={classes.input}
+            />
+          </Stack>
+        </DialogContent>
         <DialogActions>
-          <Button onClick={closeContactDialog} className={classes.dialogButton}>
-            Cancel·la
-          </Button>
-          <Button onClick={closeContactDialog} className={classes.dialogButton}>
+          <Button onClick={sendMail} className={classes.dialogButton}>
             Envia
           </Button>
         </DialogActions>
