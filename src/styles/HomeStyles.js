@@ -140,6 +140,12 @@ export const homeStyles = makeStyles((theme) =>
       backgroundColor: `${theme.palette.primary.highlight} !important`,
       borderRadius: "0px !important",
     },
+    dialogButtonDisabled: {
+      width: "100px !important",
+      color: `${theme.palette.text.dark} !important`,
+      backgroundColor: `${theme.palette.primary.dark} !important`,
+      borderRadius: "0px !important",
+    },
     input: {
       width: "100% !important",
       marginBottom: "40px !important",
@@ -148,6 +154,16 @@ export const homeStyles = makeStyles((theme) =>
       "& .MuiInput-underline:after": {
         borderBottomColor: theme.palette.primary.highlight,
       },
+    },
+    loadingBox: {
+      display: "flex !important",
+      justifyContent: "center !important",
+      alignItems: "center !important",
+      height: "350px",
+    },
+    difficultyBox: {
+      display: "flex",
+      alignItems: "center",
     },
   })
 );

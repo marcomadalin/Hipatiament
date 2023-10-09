@@ -1,11 +1,15 @@
 import {
+  Alert,
   Box,
+  CircularProgress,
+  Container,
   Dialog,
   DialogActions,
   DialogContent,
   DialogTitle,
   Fab,
   IconButton,
+  Snackbar,
   Stack,
   TextField,
   Typography,
@@ -29,8 +33,10 @@ import photo2 from "../assets/images/article2.jpg";
 import photo3 from "../assets/images/article3.jpg";
 import photo4 from "../assets/images/article4.jpg";
 import photo5 from "../assets/images/article5.jpg";
+import star from "../assets/images/star.png";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 function Home() {
   const classes = homeStyles();
@@ -43,6 +49,11 @@ function Home() {
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
 
+  const [loading, setLoading] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackBarType, setSnackBarType] = useState("");
+
   const large = useMediaQuery(theme.breakpoints.up("lg"));
 
   const articles = [
@@ -51,35 +62,48 @@ function Home() {
       photo: photo1,
       alt: "GRUPS SANGUINIS",
       link: "/GrupsSanguinis",
+      difficulty: 1,
     },
     {
       name: " L’ALZHEIMER, UNA MALALTIA GENÈTICA?",
       photo: photo2,
       alt: "ALZHEIMER",
       link: "/Alzeimer",
+      difficulty: 1,
     },
     {
       name: "PHINEAS GAGE, L’HOME QUE VA SOBREVIURE A UNA PERFORACIÓ CRANEAL",
       photo: photo3,
       alt: "PHINEAS GAGE",
       link: "/PhineasGage",
+      difficulty: 1,
     },
     {
       name: "LES PASTILLES ANTICONCEPTIVES",
       photo: photo4,
       alt: "PASTILLES ANTICONCEPTIVES",
       link: "/Anticonceptius",
+      difficulty: 1,
     },
     {
       name: "TENIR UNA CAMA ENGANXADA AL COS",
       photo: photo5,
       alt: "CAMA ENGANXADA",
       link: "/CamaEnganxada",
+      difficulty: 1,
     },
   ];
 
   const openContactDialog = () => {
     setOpen(true);
+    setLoading(false);
+    setName("");
+    setEmail("");
+    setText("");
+    setLoading(false);
+    setSnackBarType("");
+    setSnackbarMessage("");
+    setOpenSnackbar(false);
   };
 
   const closeContactDialog = () => {
@@ -87,14 +111,70 @@ function Home() {
     setEmail("");
     setText("");
     setOpen(false);
+    setLoading(false);
   };
 
   const sendMail = async () => {
-    closeContactDialog();
+    setLoading(true);
+    emailjs
+      .send(
+        "service_g397j5e",
+        "template_1qnb4mx",
+        {
+          name: name,
+          email: email,
+          message: text,
+        },
+        "GLPJXKvhfJ93PLqcn"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          setLoading(false);
+          // @ts-ignore
+          setSnackBarType("success");
+          setSnackbarMessage("Missatge enviat !");
+          setOpenSnackbar(true);
+          closeContactDialog();
+        },
+        function (error) {
+          console.log("FAILED...", error);
+          // @ts-ignore
+          setSnackBarType("error");
+          setSnackbarMessage("Hi ha hagut un error, torna a provar");
+          setLoading(false);
+        }
+      );
+  };
+
+  const closeSnackbar = (
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnackbar(false);
   };
 
   return (
     <>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={closeSnackbar}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        sx={{ width: "400px !important", marginTop: "50px" }}
+      >
+        <Alert
+          onClose={closeSnackbar}
+          // @ts-ignore
+          severity={snackBarType}
+          sx={{ width: "100%" }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
       <section
         className={`${classes.section1} ${
           large ? "justify-between" : "justify-normal"
@@ -179,6 +259,23 @@ function Home() {
             return (
               <SwiperSlide key={key} className={classes.slide}>
                 <article className={classes.articleBox}>
+                  <div className={classes.difficultyBox}>
+                    <Typography className="pr-2">Difficultat: </Typography>
+                    {Array.from({ length: item.difficulty }).map(() => {
+                      return (
+                        <Box
+                          component="img"
+                          alt="star"
+                          src={star}
+                          sx={{
+                            width: "20px",
+                            height: "20px",
+                            marginRight: "10px",
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
                   <Box
                     component="img"
                     className={classes.articleImage}
@@ -190,7 +287,7 @@ function Home() {
                   />
                   <Typography
                     align="center"
-                    variant="h5"
+                    variant="h6"
                     className={classes.articleHeading}
                     onClick={() => {
                       navigate(item.link);
@@ -232,43 +329,60 @@ function Home() {
           className={classes.dialogContent}
           sx={{ width: "100% !important" }}
         >
-          <Stack className={classes.inputsStack}>
-            <TextField
-              placeholder="Nom"
-              variant="standard"
-              value={name}
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
-              className={classes.input}
-              inputProps={{ style: { padding: "15px" } }}
-            />
-            <TextField
-              required
-              placeholder="Correu"
-              variant="standard"
-              value={email}
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-              className={classes.input}
-              inputProps={{ style: { padding: "15px" } }}
-            />
-            <TextField
-              placeholder="Escriu aqui...."
-              variant="standard"
-              multiline
-              minRows="7"
-              value={text}
-              onChange={(event) => {
-                setText(event.target.value);
-              }}
-              className={classes.input}
-            />
-          </Stack>
+          {loading ? (
+            <Container className={classes.loadingBox}>
+              <CircularProgress color="secondary" />
+            </Container>
+          ) : (
+            <Stack className={classes.inputsStack}>
+              <TextField
+                placeholder="Nom"
+                variant="standard"
+                value={name}
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+                className={classes.input}
+                inputProps={{ style: { padding: "15px" } }}
+              />
+              <TextField
+                required
+                placeholder="Correu *"
+                variant="standard"
+                value={email}
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+                className={classes.input}
+                inputProps={{ style: { padding: "15px" } }}
+              />
+              <TextField
+                placeholder="Escriu aqui...."
+                variant="standard"
+                multiline
+                minRows="7"
+                value={text}
+                onChange={(event) => {
+                  setText(event.target.value);
+                }}
+                className={classes.input}
+              />
+            </Stack>
+          )}
         </DialogContent>
         <DialogActions>
-          <Button onClick={sendMail} className={classes.dialogButton}>
+          <Button
+            onClick={sendMail}
+            classes={{
+              root: classes.dialogButton,
+              disabled: classes.dialogButtonDisabled,
+            }}
+            disabled={
+              email === null ||
+              !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email) ||
+              loading
+            }
+          >
             Envia
           </Button>
         </DialogActions>
