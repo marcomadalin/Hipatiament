@@ -9,22 +9,18 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import { ThemeProvider } from "@mui/material";
 import light from "./themes/light.js";
-import Anticonceptius from "./pages/Anticonceptius";
-import PhineasGage from "./pages/PhineasGage";
-import Alzeimer from "./pages/Alzeimer";
-import GrupsSanguinis from "./pages/GrupsSanguinis";
-import CamaEnganxada from "./pages/CamaEnganxada";
+import Article from "./pages/Article";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route element={<MainLayout />}>
         <Route element={<Home />} />
-        <Route element={<GrupsSanguinis />} path="/GrupsSanguinis" />
-        <Route element={<Alzeimer />} path="/Alzeimer" />
-        <Route element={<PhineasGage />} path="/PhineasGage" />
-        <Route element={<Anticonceptius />} path="/Anticonceptius" />
-        <Route element={<CamaEnganxada />} path="/CamaEnganxada" />
+        <Route element={<Article />} path="/GrupsSanguinis" />
+        <Route element={<Article />} path="/Alzheimer" />
+        <Route element={<Article />} path="/PhineasGage" />
+        <Route element={<Article />} path="/Anticonceptius" />
+        <Route element={<Article />} path="/CamaEnganxada" />
         <Route path="*" element={<Home />} />
       </Route>
     </Route>

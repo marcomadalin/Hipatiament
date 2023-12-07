@@ -68,7 +68,7 @@ function Home() {
       name: " L’ALZHEIMER, UNA MALALTIA GENÈTICA?",
       photo: photo2,
       alt: "ALZHEIMER",
-      link: "/Alzeimer",
+      link: "/Alzheimer",
       difficulty: 1,
     },
     {
@@ -129,7 +129,6 @@ function Home() {
       )
       .then(
         function (response) {
-          console.log("SUCCESS!", response.status, response.text);
           setLoading(false);
           // @ts-ignore
           setSnackBarType("success");
@@ -138,7 +137,6 @@ function Home() {
           closeContactDialog();
         },
         function (error) {
-          console.log("FAILED...", error);
           // @ts-ignore
           setSnackBarType("error");
           setSnackbarMessage("Hi ha hagut un error, torna a provar");
