@@ -9,7 +9,7 @@ function Article() {
 
   return (
     <div className={classes.articleWrapper}>
-      <iframe className={classes.html} src={article} />
+      <iframe title="Article" className={classes.html} src={article} />
     </div>
   );
 }

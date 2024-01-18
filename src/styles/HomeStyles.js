@@ -50,6 +50,15 @@ export const homeStyles = makeStyles((theme) =>
       width: "200px",
       height: "450px",
     },
+      buttonsWrapperLg: {
+        display: "flex",
+          gap: "30px",
+      },
+      buttonsWrapperSm: {
+          display: "flex",
+          flexDirection: "column",
+          gap: "30px",
+      },
     subscribe: {
       backgroundColor: `${theme.palette.primary.highlight} !important`,
       color: `${theme.palette.text.dark} !important`,
@@ -62,6 +71,18 @@ export const homeStyles = makeStyles((theme) =>
         backgroundColor: `${theme.palette.primary.dark} !important`,
       },
     },
+      participate: {
+          backgroundColor: `${theme.palette.primary.highlight2} !important`,
+          color: `${theme.palette.text.black} !important`,
+          fontSize: "18px !important",
+          padding: "10px 10px 10px 10xp !important",
+          width: "200px !important",
+          height: "50px !important",
+          borderRadius: "0px !important",
+          "&:hover": {
+              backgroundColor: `${theme.palette.primary.dark} !important`,
+          },
+      },
     mediaBox: {
       display: "inline-flex",
       gap: "50px",
