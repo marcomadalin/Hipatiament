@@ -23,6 +23,7 @@ const light = createTheme({
     background: {
       dark: "#434040",
       light: "#f5f5f5",
+      pink: "#EDE6E6"
     },
   },
 });

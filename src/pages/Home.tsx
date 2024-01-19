@@ -34,6 +34,7 @@ import photo3 from "../assets/images/article3.jpg";
 import photo4 from "../assets/images/article4.jpg";
 import photo5 from "../assets/images/article5.jpg";
 import star from "../assets/images/star.png";
+import main from "../assets/images/main.jpg";
 import {useNavigate} from "react-router-dom";
 import React, {useState} from "react";
 import emailjs from "@emailjs/browser";
@@ -46,6 +47,8 @@ function Home() {
 
     const [open, setOpen] = useState(false);
     const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [company, setCompany] = useState("");
     const [email, setEmail] = useState("");
     const [text, setText] = useState("");
 
@@ -121,16 +124,16 @@ function Home() {
         emailjs
             .send(
                 "service_g397j5e",
-                "template_1qnb4mx",
+                "template_377i82h",
                 {
                     name: name,
                     email: email,
                     message: text,
                 },
-                "GLPJXKvhfJ93PLqcn"
+                "GLPJXKvhfJ93PLqcn",
             )
             .then(
-                function (response) {
+                function () {
                     setLoading(false);
                     // @ts-ignore
                     setSnackBarType("success");
@@ -138,17 +141,20 @@ function Home() {
                     setOpenSnackbar(true);
                     closeContactDialog();
                 },
-                function (error) {
+                function () {
                     // @ts-ignore
                     setSnackBarType("error");
                     setSnackbarMessage("Hi ha hagut un error, torna a provar");
                     setLoading(false);
                 }
-            );
+            ).finally(function () {
+                setLoading(false)
+            }
+        );
     };
 
     const closeSnackbar = (
-        event: React.SyntheticEvent | Event,
+        _event: React.SyntheticEvent | Event,
         reason?: string
     ) => {
         if (reason === "clickaway") {
@@ -229,7 +235,7 @@ function Home() {
                             component="img"
                             className={classes.mainImage}
                             alt="Coneixemnt"
-                            src="https://i.pinimg.com/564x/64/57/2c/64572cfbe1a767bd7bad406f7fc1e0ae.jpg"
+                            src={main}
                         />
                     </div>
                 )}
@@ -252,7 +258,7 @@ function Home() {
                         },
                     }}
                     autoplay={true}
-                    grabCursor={true}
+                    grabCursor={false}
                     navigation={true}
                     centeredSlides={true}
                     initialSlide={1}
@@ -265,7 +271,7 @@ function Home() {
                             <SwiperSlide key={index} className={classes.slide}>
                                 <article className={classes.articleBox}>
                                     <div className={classes.difficultyBox}>
-                                        <Typography className="pr-2">Difficultat: </Typography>
+                                        <Typography className="pr-2">Dificultat: </Typography>
                                         {Array.from({length: item.difficulty}).map(() => {
                                             return (
                                                 <Box
@@ -357,6 +363,28 @@ function Home() {
                                 value={email}
                                 onChange={(event) => {
                                     setEmail(event.target.value);
+                                }}
+                                className={classes.input}
+                                inputProps={{style: {padding: "15px"}}}
+                            />
+                            <TextField
+                                required
+                                placeholder="Telèfon"
+                                variant="standard"
+                                value={phone}
+                                onChange={(event) => {
+                                    setPhone(event.target.value);
+                                }}
+                                className={classes.input}
+                                inputProps={{style: {padding: "15px"}}}
+                            />
+                            <TextField
+                                required
+                                placeholder="Empresa"
+                                variant="standard"
+                                value={company}
+                                onChange={(event) => {
+                                    setCompany(event.target.value);
                                 }}
                                 className={classes.input}
                                 inputProps={{style: {padding: "15px"}}}
