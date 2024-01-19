@@ -7,6 +7,11 @@ export const articleListStyles = makeStyles((theme) =>
             backgroundColor: theme.palette.background.pink,
             padding: "40px 60px 40px 60px",
         },
+        searchDiv: {
+            width: "100% !important",
+            display: "flex !important",
+            justifyContent: "space-between !important"
+        },
         articleListLg: {
             display: "flex",
             alignItems: "start !important",
@@ -33,15 +38,19 @@ export const articleListStyles = makeStyles((theme) =>
             color: theme.palette.text.black,
         },
         heading1: {
+            display: "flex !important",
             marginLeft: "15px !important",
             fontSize: "34px !important",
             color: theme.palette.text.dark,
-            marginBottom: "20px !important"
+            marginBottom: "40px !important",
+            alignItems: "center !important",
         },
         heading1xs: {
+            display: "flex !important",
             marginLeft: "15px !important",
             fontSize: "26px !important",
             color: theme.palette.text.dark,
+            alignItems: "center !important",
         },
         articleImage: {
             "&:hover": {
@@ -67,5 +76,15 @@ export const articleListStyles = makeStyles((theme) =>
             alignItems: "center",
             marginBottom: "20px"
         },
+        input: {
+            backgroundColor: `${theme.palette.background.pink} !important`,
+            color: `${theme.palette.text.dark} !important`,
+            "& .MuiInput-underline:after": {
+                borderBottomColor: theme.palette.primary.highlight,
+            },
+        },
+        inputWith: {
+            maxWidth: "180px !important"
+        }
     })
 );
