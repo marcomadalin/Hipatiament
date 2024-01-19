@@ -27,7 +27,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import {Navigation, Pagination} from "swiper/modules";
+import {Autoplay, Navigation, Pagination} from "swiper/modules";
 import photo1 from "../assets/images/article1.jpg";
 import photo2 from "../assets/images/article2.jpg";
 import photo3 from "../assets/images/article3.jpg";
@@ -258,10 +258,10 @@ function Home() {
                         },
                     }}
                     autoplay={true}
-                    grabCursor={false}
+                    grabCursor={true}
                     navigation={true}
                     centeredSlides={true}
-                    initialSlide={1}
+                    initialSlide={0}
                     loop={true}
                     modules={[Pagination, Navigation]}
                     className={classes.swiper}
