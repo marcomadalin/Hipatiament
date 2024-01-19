@@ -105,7 +105,7 @@ function AboutMe() {
                         <Box
                             component="img"
                             className={classes.mainImage}
-                            alt="Coneixemnt"
+                            alt="Fotografia de perfil"
                             src={profile}
                         />
                     </div>
@@ -115,24 +115,27 @@ function AboutMe() {
                                 EMMA SANCHO COPOVÍ
                             </Typography>
                             <Typography variant="h2"
+
                                         className={`${small ? classes.subheadingxs : classes.subheadingxs}`}>
-                                TÈCNIC DE LABORATORI, TÈCNIC DE FARMACIA I ESTUDIANT DE LOGOPÈDIA
+                                TÈCNIC DE LABORATORI, TÈCNIC DE FARMÀCIA I ESTUDIANT DE LOGOPÈDIA
                             </Typography>
-                            <Typography paragraph>
+                            <Typography paragraph align="justify">
                                 Sóc Emma Sancho, ja vaig ser divulgadora científica, ara mateix
                                 tècnic de laboratori i tècnic de farmàcia i futura logopeda.
                             </Typography>
-                            <Typography paragraph> Sempre m’ha apassionat el món de la ciència i la investigació, crec
+                            <Typography paragraph align="justify"> Sempre m’ha apassionat el món de la ciència i la
+                                investigació, crec
                                 que és tot un món per descobrir i que encara no se’l reconeix com
                                 és degut.
                             </Typography>
-                            <Typography paragraph>A més a més, crec que el tema femení sempre ha estat un poc tabú
+                            <Typography paragraph align="justify">A més a més, crec que el tema femení sempre ha estat
+                                un poc tabú
                                 en aquests àmbits, on els “problemes de les dones” s’han silenciat o
                                 no se li han pres la importància que mereix.
                             </Typography>
-                            <Typography paragraph>
+                            <Typography paragraph align="justify">
                                 Hipatiament naix per a combatre aquestes injustícies, per a explicar
-                                la ciència a tothom i que estigaa a l’avast de tothom, però sobretot
+                                la ciència a tothom i que estiga a l’avast de tothom, però sobretot
                                 fent-ho amb la meva llengua: el català.
                             </Typography>
                         </div>
@@ -140,7 +143,7 @@ function AboutMe() {
                 </div>
                 <Typography variant="h3"
                             className={`${small ? classes.heading2xs : classes.heading2}`}>CONTACTE</Typography>
-                <Typography className="pb-10">
+                <Typography className="pb-10" align="justify">
                     No dubtis en contactar-me per qualsevol dubte, proposta, projecte,... estaré encantada
                     d’ajudar-te!
                 </Typography>

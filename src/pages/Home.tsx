@@ -1,20 +1,20 @@
 import {
-  Alert,
-  Box,
-  CircularProgress,
-  Container,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Fab,
-  IconButton,
-  Snackbar,
-  Stack,
-  TextField,
-  Typography,
-  useMediaQuery,
-  useTheme,
+    Alert,
+    Box,
+    CircularProgress,
+    Container,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    Fab,
+    IconButton,
+    Snackbar,
+    Stack,
+    TextField,
+    Typography,
+    useMediaQuery,
+    useTheme,
 } from "@mui/material";
 import MessageIcon from "@mui/icons-material/Message";
 import CloseIcon from "@mui/icons-material/Close";
@@ -27,17 +27,13 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import {Autoplay, Navigation, Pagination} from "swiper/modules";
-import photo1 from "../assets/images/article1.jpg";
-import photo2 from "../assets/images/article2.jpg";
-import photo3 from "../assets/images/article3.jpg";
-import photo4 from "../assets/images/article4.jpg";
-import photo5 from "../assets/images/article5.jpg";
+import {Navigation, Pagination} from "swiper/modules";
 import star from "../assets/images/star.png";
 import main from "../assets/images/main.jpg";
 import {useNavigate} from "react-router-dom";
 import React, {useState} from "react";
 import emailjs from "@emailjs/browser";
+import Constants from "../utils/Constants.js";
 
 function Home() {
     const classes = homeStyles();
@@ -61,43 +57,6 @@ function Home() {
 
     const small = useMediaQuery(theme.breakpoints.down("sm"));
 
-    const articles = [
-        {
-            name: "ELS GRUPS SANGUINIS",
-            photo: photo1,
-            alt: "GRUPS SANGUINIS",
-            link: "/GrupsSanguinis",
-            difficulty: 1,
-        },
-        {
-            name: " L’ALZHEIMER, UNA MALALTIA GENÈTICA?",
-            photo: photo2,
-            alt: "ALZHEIMER",
-            link: "/Alzheimer",
-            difficulty: 1,
-        },
-        {
-            name: "PHINEAS GAGE, L’HOME QUE VA SOBREVIURE A UNA PERFORACIÓ CRANEAL",
-            photo: photo3,
-            alt: "PHINEAS GAGE",
-            link: "/PhineasGage",
-            difficulty: 1,
-        },
-        {
-            name: "LES PASTILLES ANTICONCEPTIVES",
-            photo: photo4,
-            alt: "PASTILLES ANTICONCEPTIVES",
-            link: "/Anticonceptius",
-            difficulty: 1,
-        },
-        {
-            name: "TENIR UNA CAMA ENGANXADA AL COS",
-            photo: photo5,
-            alt: "CAMA ENGANXADA",
-            link: "/CamaEnganxada",
-            difficulty: 1,
-        },
-    ];
 
     const openContactDialog = () => {
         setOpen(true);
@@ -266,7 +225,7 @@ function Home() {
                     modules={[Pagination, Navigation]}
                     className={classes.swiper}
                 >
-                    {articles.map((item, index) => {
+                    {Constants.articles.map((item, index) => {
                         return (
                             <SwiperSlide key={index} className={classes.slide}>
                                 <article className={classes.articleBox}>
