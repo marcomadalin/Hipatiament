@@ -271,6 +271,9 @@ function Home() {
                     })}
                 </Swiper>
             </section>
+            <section className={classes.section3}>
+
+            </section>
             <div className={classes.floatingButtonBox}>
                 <Fab
                     className={classes.contactButton}

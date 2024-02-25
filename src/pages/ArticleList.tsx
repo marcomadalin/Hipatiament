@@ -16,6 +16,15 @@ import {
 import star from "../assets/images/star.png";
 import {useNavigate} from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
+import {
+    EmailIcon,
+    EmailShareButton,
+    FacebookIcon,
+    FacebookShareButton, LinkedinIcon, LinkedinShareButton,
+    TwitterIcon,
+    TwitterShareButton, WhatsappIcon,
+    WhatsappShareButton
+} from "@mindofmar/react-share";
 
 function ArticleList() {
 
@@ -115,6 +124,35 @@ function ArticleList() {
                                 <Typography paragraph align="justify">
                                     {item.firstParagraph}
                                 </Typography>
+                                <div className="flex space-x-4">
+                                    <FacebookShareButton url={"https://hipatiament.vercel.app" + item.link}>
+                                        <FacebookIcon size={32} round />
+                                    </FacebookShareButton>
+                                    <TwitterShareButton
+                                        url={"https://hipatiament.vercel.app" + item.link}
+                                        title={item.name}
+                                    >
+                                        <TwitterIcon size={32} round />
+                                    </TwitterShareButton>
+                                    <WhatsappShareButton
+                                        url={"https://hipatiament.vercel.app" + item.link}
+                                        title={item.name}
+                                        separator=":: "
+                                    >
+                                        <WhatsappIcon size={32} round />
+                                    </WhatsappShareButton>
+                                    <LinkedinShareButton
+                                        url={"https://hipatiament.vercel.app" + item.link}>
+                                        <LinkedinIcon size={32} round />
+                                    </LinkedinShareButton>
+                                    <EmailShareButton
+                                        url={"https://hipatiament.vercel.app" + item.link}
+                                        subject={item.name}
+                                        body={item.firstParagraph}
+                                    >
+                                        <EmailIcon size={32} round />
+                                    </EmailShareButton>
+                                </div>
                             </ListItemText>
                         </ListItem>
                     ))

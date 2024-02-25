@@ -16,6 +16,12 @@ export const homeStyles = makeStyles((theme) =>
             backgroundColor: theme.palette.background.light,
             padding: "0px 60px 0px 60px",
         },
+        section3: {
+            minHeight: "calc(100vh - 64px)",
+            display: "flex",
+            backgroundColor: theme.palette.background.colored,
+            padding: "40px 60px 40px 60px",
+        },
         headingsBox: {
             height: "100",
             display: "flex",
