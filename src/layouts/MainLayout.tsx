@@ -6,6 +6,7 @@ import {mainLayoutStyles} from "../styles/MainLayoutStyles";
 import MenuIcon from '@mui/icons-material/Menu';
 import React, {useState} from "react";
 import {Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, useMediaQuery, useTheme} from "@mui/material";
+import Constants from "../utils/Constants";
 
 function MainLayout() {
     const classes = mainLayoutStyles();
@@ -20,21 +21,6 @@ function MainLayout() {
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
-
-    const links = [
-        {
-            url: "/",
-            name: "Inici"
-        },
-        {
-            url: "/articles",
-            name: "Articles"
-        },
-        {
-            url: "/sobreMi",
-            name: "Sobre mi"
-        },
-    ]
 
     return (
         <>
@@ -65,11 +51,13 @@ function MainLayout() {
                         </Typography>
                         {!small && (
                             <div className={classes.nav}>
-                                {links.map((item, key) => (
+                                {Constants.links.map((item, key) => (
                                     <Link key={key} to={item.url} className={classes.link}>
                                         <Typography
                                             fontWeight={location.pathname === item.url ? "bold" :
-                                                (location.pathname !== "/" && location.pathname !== "/sobreMi" && item.url === "/articles" ? "bold" : "normal")}>
+                                                (location.pathname !== "/" && location.pathname !== Constants.links[3].url
+                                                && location.pathname !== Constants.links[2].url
+                                                && item.url === Constants.links[1].url ? "bold" : "normal")}>
                                             {item.name}
                                         </Typography>
                                     </Link>
@@ -101,7 +89,7 @@ function MainLayout() {
                         </Typography>
                         <Divider/>
                         <List>
-                            {links.map((item, key) => (
+                            {Constants.links.map((item, key) => (
                                 <ListItem key={key} disablePadding>
                                     <ListItemButton sx={{display: 'flex', justifyContent: 'center'}}>
                                         <Link key={key} to={item.url} className={classes.linkDrawer}>

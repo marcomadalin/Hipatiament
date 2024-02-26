@@ -160,7 +160,7 @@ function Home() {
                         d’Hipàtia i reivindicant la nostra llengua: el català.
                     </Typography>
                     <div className={`${small ? classes.buttonsWrapperSm : classes.buttonsWrapperLg}`}>
-                        <Button className={classes.subscribe}>Subscriu-te</Button>
+                        <Button className={classes.subscribe} onClick={openContactDialog}>Subscriu-te</Button>
                         <Button className={classes.participate}>Participa</Button>
                     </div>
                     <div className={classes.mediaBox}>
@@ -208,11 +208,11 @@ function Home() {
                     }}
                     breakpoints={{
                         800: {
-                            slidesPerView: 2,
+                            slidesPerView: 1,
                             spaceBetween: 50,
                         },
                         1200: {
-                            slidesPerView: 3,
+                            slidesPerView: 1,
                             spaceBetween: 50,
                         },
                     }}

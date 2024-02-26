@@ -5,6 +5,25 @@ import photo4 from "../assets/images/article4.jpg";
 import photo5 from "../assets/images/article5.jpg";
 
 export default class Constants {
+    static links = [
+        {
+            url: "/",
+            name: "Inici"
+        },
+        {
+            url: "/Articles",
+            name: "Articles"
+        },
+        {
+            url: "/Colaboracions",
+            name: "Col·laboracions"
+        },
+        {
+            url: "/SobreMi",
+            name: "Sobre mi"
+        },
+    ]
+
     static articles = [
         {
             name: "ELS GRUPS SANGUINIS",
@@ -15,6 +34,7 @@ export default class Constants {
             date: "9/12/2023",
             firstParagraph: "Fins a l’any 1900 no es va saber per què la gent moria freqüentment quan es feien transfusions de sang, fins que es van descobrir els grups sanguinis i les seves diferències.",
         },
+        /*
         {
             name: " L’ALZHEIMER, UNA MALALTIA GENÈTICA?",
             photo: photo2,
@@ -51,5 +71,7 @@ export default class Constants {
             date: "6/01/2024",
             firstParagraph: "L’afirmació “tenir enganxada una cama al cos” sembla extreta d’alguna pel·lícula ciència ficció, irreal, però és una afirmació duta a terme per un pacient als anys 80.\n",
         },
+
+         */
     ];
 }
