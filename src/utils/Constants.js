@@ -53,6 +53,7 @@ export default class Constants {
             date: "23/12/2023",
             firstParagraph: "Phineas Gage era un artificier de 25 anys. El 13 de setembre de 1843 estava treballant amb explosius quan de sobte una barra de ferro va sortir disparada, penetrant per la seva galta esquerra i foradant-li el crani.",
         },
+        */
         {
             name: "LES PASTILLES ANTICONCEPTIVES",
             photo: photo4,
@@ -62,6 +63,7 @@ export default class Constants {
             date: "30/12/2023",
             firstParagraph: "Les anticonceptives: un exemple pràctic on es veu clar la falta de recursos, però sobretot, d’importància.\n",
         },
+        /*
         {
             name: "TENIR UNA CAMA ENGANXADA AL COS",
             photo: photo5,
