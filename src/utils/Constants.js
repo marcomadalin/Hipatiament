@@ -34,7 +34,6 @@ export default class Constants {
             date: "9/12/2023",
             firstParagraph: "Fins a l’any 1900 no es va saber per què la gent moria freqüentment quan es feien transfusions de sang, fins que es van descobrir els grups sanguinis i les seves diferències.",
         },
-        /*
         {
             name: " L’ALZHEIMER, UNA MALALTIA GENÈTICA?",
             photo: photo2,
@@ -44,6 +43,7 @@ export default class Constants {
             date: "16/12/2023",
             firstParagraph: "La malaltia de l’Article és la malaltia més freqüent en la població anciana. Representa entre un 50 i un 60% de les demències i és una de les malalties que més morts causen a l’any després de les malalties cardiovasculars i el càncer, és més freqüent en dones, essent la ràtio de tres dones per un home.",
         },
+        /*
         {
             name: "PHINEAS GAGE, L’HOME QUE VA SOBREVIURE A UNA PERFORACIÓ CRANEAL",
             photo: photo3,

@@ -19,9 +19,9 @@ const router = createBrowserRouter(
                 <Route element={<Collaborations/>} path="/Colaboracions"/>
                 <Route element={<Article/>} path="/GrupsSanguinis"/>
                 <Route element={<Article/>} path="/Anticonceptius"/>
+                <Route element={<Article/>} path="/Alzheimer"/>
                 {
                     /*
-                <Route element={<Article/>} path="/Alzheimer"/>
                 <Route element={<Article/>} path="/PhineasGage"/>
                 <Route element={<Article/>} path="/CamaEnganxada"/>
                      */
