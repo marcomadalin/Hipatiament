@@ -63,7 +63,6 @@ export default class Constants {
             date: "30/12/2023",
             firstParagraph: "Les anticonceptives: un exemple pràctic on es veu clar la falta de recursos, però sobretot, d’importància.\n",
         },
-        /*
         {
             name: "TENIR UNA CAMA ENGANXADA AL COS",
             photo: photo5,
@@ -74,6 +73,5 @@ export default class Constants {
             firstParagraph: "L’afirmació “tenir enganxada una cama al cos” sembla extreta d’alguna pel·lícula ciència ficció, irreal, però és una afirmació duta a terme per un pacient als anys 80.\n",
         },
 
-         */
     ];
 }

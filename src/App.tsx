@@ -20,6 +20,7 @@ const router = createBrowserRouter(
                 <Route element={<Article/>} path="/GrupsSanguinis"/>
                 <Route element={<Article/>} path="/Anticonceptius"/>
                 <Route element={<Article/>} path="/Alzheimer"/>
+                <Route element={<Article/>} path="/CamaEnganxada"/>
                 {
                     /*
                 <Route element={<Article/>} path="/PhineasGage"/>
