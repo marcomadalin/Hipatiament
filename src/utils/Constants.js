@@ -3,6 +3,7 @@ import photo2 from "../assets/images/article2.jpg";
 import photo3 from "../assets/images/article3.jpg";
 import photo4 from "../assets/images/article4.jpg";
 import photo5 from "../assets/images/article5.jpg";
+import photo6 from "../assets/images/article6.jpg";
 
 export default class Constants {
     static links = [
@@ -71,6 +72,16 @@ export default class Constants {
             difficulty: 1,
             date: "6/01/2024",
             firstParagraph: "L’afirmació “tenir enganxada una cama al cos” sembla extreta d’alguna pel·lícula ciència ficció, irreal, però és una afirmació duta a terme per un pacient als anys 80.\n",
+        },
+
+        {
+            name: "ENDOMETRIOSIS",
+            photo: photo6,
+            alt: "ENDOMETRIOSIS",
+            link: "/Endometriosis",
+            difficulty: 1,
+            date: "9/03/2024",
+            firstParagraph: "L’endometriosi és una malaltia que pot afectar 1 de cada 10 dones d’entre 15 i 50¡ anys. De mitjana, tarda uns 8 anys en diagnosticar-se. Moltes vegades l’endometriosi es confon en regles molt doloroses, tot i que aquest dolor no siga del tot normal.\n",
         },
 
     ];
