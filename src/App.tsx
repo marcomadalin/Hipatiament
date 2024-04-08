@@ -22,11 +22,7 @@ const router = createBrowserRouter(
                 <Route element={<Article/>} path="/Alzheimer"/>
                 <Route element={<Article/>} path="/CamaEnganxada"/>
                 <Route element={<Article/>} path="/Endometriosis"/>
-                {
-                    /*
                 <Route element={<Article/>} path="/PhineasGage"/>
-                     */
-                }
                 <Route path="*" element={<Home/>}/>
             </Route>
         </Route>

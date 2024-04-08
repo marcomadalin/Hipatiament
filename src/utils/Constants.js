@@ -44,7 +44,6 @@ export default class Constants {
             date: "16/12/2023",
             firstParagraph: "La malaltia de l’Article és la malaltia més freqüent en la població anciana. Representa entre un 50 i un 60% de les demències i és una de les malalties que més morts causen a l’any després de les malalties cardiovasculars i el càncer, és més freqüent en dones, essent la ràtio de tres dones per un home.",
         },
-        /*
         {
             name: "PHINEAS GAGE, L’HOME QUE VA SOBREVIURE A UNA PERFORACIÓ CRANEAL",
             photo: photo3,
@@ -54,7 +53,6 @@ export default class Constants {
             date: "23/12/2023",
             firstParagraph: "Phineas Gage era un artificier de 25 anys. El 13 de setembre de 1843 estava treballant amb explosius quan de sobte una barra de ferro va sortir disparada, penetrant per la seva galta esquerra i foradant-li el crani.",
         },
-        */
         {
             name: "LES PASTILLES ANTICONCEPTIVES",
             photo: photo4,
