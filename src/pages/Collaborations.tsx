@@ -5,8 +5,10 @@ import {
     useMediaQuery,
     useTheme
 } from "@mui/material";
-import React from "react";
+import React from "react"
 
+// @ts-ignore
+import Microlink from '@microlink/react'
 
 function Collaborations() {
     const classes = collaborationsStyles();
@@ -22,8 +24,9 @@ function Collaborations() {
                     Si vols saber un poc més del meu treball, pots entrar a l’apartat Articles o veure’m en diferents projectes on he col·laborat.
                 </Typography>
                 <Typography variant="h6" className={`${small ? classes.heading2xs : classes.heading2} pt-7`}>TELEVISIÓ</Typography>
-                <Typography className="pb-10" align="justify">
-                </Typography>
+                <div>
+                    <Microlink url="https://www.ccma.cat/3cat/t1xc5-poderoses/video/6268104/#onboarding=true" fetchData loop size="large"/>
+                </div>
             </div>
         </>
     );
